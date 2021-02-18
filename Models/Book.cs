@@ -9,24 +9,33 @@ namespace Assignment4.Models
     public class Book
     {
         [Key]
-        public string BookId { get; set; }
+        [Required]
+        public int BookId { get; set; }
 
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public string AuthorFirstName { get; set; }
 
+        [Required]
         public string AuthorLastName { get; set; }
 
+        [Required]
         public string Publisher { get; set; }
 
-        [RegularExpression("^[0-9]{3}-[0-9]{10}$")]
+        [Required]
+        [RegularExpression("^[0-9]{3}-[0-9]{10}$", ErrorMessage ="ISBN must be in XXX-XXXXXXXXXX format")]
         public string ISBN { get; set; }
 
+        [Required]
         public bool Fiction { get; set; }
 
+        [Required]
         public string Genre { get; set; }
 
+        [Required]
         [DataType(DataType.Currency)]
-        public decimal? Price { get; set; }
+        public double? Price { get; set; }
     }
 }

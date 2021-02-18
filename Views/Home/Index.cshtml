@@ -1,8 +1,42 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Book Store";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model IQueryable<Book>
+
+
+<div>
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th scope="col">Book ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author First Name</th>
+                <th scope="col">Author Last Name</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Fiction?</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.BookId</td>
+                <td>@x.Title</td>
+                <td>@x.AuthorFirstName</td>
+                <td>@x.AuthorLastName</td>
+                <td>@x.Publisher</td>
+                <td>@x.ISBN</td>
+                <td>@x.Fiction</td>
+                <td>@x.Genre</td>
+                <td>@x.Price</td>
+            </tr>
+
+        }
+    </tbody>
+    </table>
 </div>
