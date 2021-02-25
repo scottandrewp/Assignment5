@@ -2,41 +2,50 @@
     ViewBag.Title = "Book Store";
 }
 
-@model IQueryable<Book>
+@model BookListViewModel
+    <div class="row">
+        <div class="col-2 bg-info jumbotron rounded">
+            <p class="text-white">This is a bookstore where you can oddly find 10 of Spencer Hilton's Favorite books and 3 of Scott Pulley's</p>
+        </div>
+        <div class="col-10">
+            <table class="table text-white">
+                <thead>
+                    <tr>
+                        <th class="border-warning" scope="col">Book ID</th>
+                        <th class="border-warning" scope="col">Title</th>
+                        <th class="border-warning" scope="col">Author First Name</th>
+                        <th class="border-warning" scope="col">Author Last Name</th>
+                        <th class="border-warning" scope="col">Publisher</th>
+                        <th class="border-warning" scope="col">ISBN</th>
+                        <th class="border-warning" scope="col">Fiction?</th>
+                        <th class="border-warning" scope="col">Genre</th>
+                        <th class="border-warning" scope="col">Price</th>
+                        <th class="border-warning" scope="col">Pages</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    @foreach (var x in Model.Books)
+                    {
+                        <tr>
+                            <td>@x.BookId</td>
+                            <td>@x.Title</td>
+                            <td>@x.AuthorFirstName</td>
+                            <td>@x.AuthorLastName</td>
+                            <td>@x.Publisher</td>
+                            <td>@x.ISBN</td>
+                            <td>@x.Fiction</td>
+                            <td>@x.Genre</td>
+                            <td>$@x.Price</td>
+                            <td>@x.Pages</td>
+                        </tr>
 
-<div>
-    <table class="table text-white">
-        <thead>
-            <tr>
-                <th scope="col">Book ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Author First Name</th>
-                <th scope="col">Author Last Name</th>
-                <th scope="col">Publisher</th>
-                <th scope="col">ISBN</th>
-                <th scope="col">Fiction?</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-
-        <tbody>
-        @foreach (var x in Model)
-        {
-            <tr>
-                <td>@x.BookId</td>
-                <td>@x.Title</td>
-                <td>@x.AuthorFirstName</td>
-                <td>@x.AuthorLastName</td>
-                <td>@x.Publisher</td>
-                <td>@x.ISBN</td>
-                <td>@x.Fiction</td>
-                <td>@x.Genre</td>
-                <td>@x.Price</td>
-            </tr>
-
-        }
-    </tbody>
-    </table>
-</div>
+                    }
+                </tbody>
+            </table>
+            <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn text-white"
+                 page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-light text-dark"
+                 class="btn-group pull-right m-1 "></div>
+        </div>
+    </div>

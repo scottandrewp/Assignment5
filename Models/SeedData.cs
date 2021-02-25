@@ -33,7 +33,8 @@ namespace Assignment4.Models
                         ISBN = "978-0451419439",
                         Fiction = true,
                         Genre = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                     new Book
@@ -46,7 +47,8 @@ namespace Assignment4.Models
                         ISBN = "978-0743270755",
                         Fiction = false,
                         Genre = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
                     },
 
                      new Book
@@ -59,7 +61,8 @@ namespace Assignment4.Models
                          ISBN = "978-0553384611",
                          Fiction = false,
                          Genre = "Biography",
-                         Price = 21.54
+                         Price = 21.54,
+                         Pages = 832
                      },
 
                      new Book
@@ -72,7 +75,9 @@ namespace Assignment4.Models
                          ISBN = "978-0812981254",
                          Fiction = false,
                          Genre = "Biography",
-                         Price = 11.61
+                         Price = 11.61,
+                         Pages = 864
+                         
                      },
 
                      new Book
@@ -85,7 +90,8 @@ namespace Assignment4.Models
                          ISBN = "978-0812974492",
                          Fiction = false,
                          Genre = "Historical",
-                         Price = 13.33
+                         Price = 13.33,
+                         Pages = 528
                      },
 
                      new Book
@@ -98,7 +104,8 @@ namespace Assignment4.Models
                          ISBN = "978-0804171281",
                          Fiction = true,
                          Genre = "Historical Fiction",
-                         Price = 15.95
+                         Price = 15.95,
+                         Pages = 288
                      },
 
                      new Book
@@ -111,7 +118,8 @@ namespace Assignment4.Models
                          ISBN = "978-1455586691",
                          Fiction = false,
                          Genre = "Self-Help",
-                         Price = 14.99
+                         Price = 14.99,
+                         Pages = 304
                      },
 
                      new Book
@@ -124,7 +132,8 @@ namespace Assignment4.Models
                          ISBN = "978-1455523023",
                          Fiction = false,
                          Genre = "Self-Help",
-                         Price = 21.66
+                         Price = 21.66,
+                         Pages = 240
                      },
 
                      new Book
@@ -137,7 +146,8 @@ namespace Assignment4.Models
                          ISBN = "978-1591847984",
                          Fiction = false,
                          Genre = "Business",
-                         Price = 29.16
+                         Price = 29.16,
+                         Pages = 400
                      },
 
                      new Book
@@ -150,7 +160,50 @@ namespace Assignment4.Models
                          ISBN = "978-0553393613",
                          Fiction = true,
                          Genre = "Thrillers",
-                         Price = 15.03
+                         Price = 15.03,
+                         Pages = 642
+                     },
+
+                     new Book
+                     {
+                         
+                         Title = "Can't Hurt Me",
+                         AuthorFirstName = "David",
+                         AuthorLastName = "Goggins",
+                         Publisher = "Lioncrest",
+                         ISBN = "978-1544507859",
+                         Fiction = false,
+                         Genre = "Auto-Biography",
+                         Price = 17.99,
+                         Pages = 363
+                     },
+
+                     new Book
+                     {
+                         
+                         Title = "Extreme Ownership",
+                         AuthorFirstName = "Jocko",
+                         AuthorLastName = "Willink",
+                         Publisher = "St Martins",
+                         ISBN = "978-1250183866",
+                         Fiction = false,
+                         Genre = "Business",
+                         Price = 27.99,
+                         Pages = 322
+                     },
+
+                     new Book
+                     {
+                        
+                         Title = "Binging With Babish",
+                         AuthorFirstName = "Andrew",
+                         AuthorLastName = "Rea",
+                         Publisher = "Houghton Mifflin Harcourt",
+                         ISBN = "978-1328589897",
+                         Fiction = false,
+                         Genre = "Cookbook",
+                         Price = 30.00,
+                         Pages = 335
                      }
                 );
 
