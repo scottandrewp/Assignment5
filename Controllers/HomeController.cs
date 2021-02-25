@@ -28,14 +28,14 @@ namespace Assignment4.Controllers
 
             return View(new BookListViewModel
             {
-                Books = _repository.Books
+                Books = _repository.Books   //Format repository info and take the info according to the number of items per page desired
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
 
                 ,
 
-                PagingInfo = new PagingInfo
+                PagingInfo = new PagingInfo // set the Paging info
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
