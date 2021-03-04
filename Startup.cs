@@ -57,6 +57,23 @@ namespace Assignment4
 
             app.UseEndpoints(endpoints =>
             {
+              
+
+                endpoints.MapControllerRoute("genrepage",    //this endpoint is for when the user types both a genre and page number in the URL
+                    "{genre}/{page:int}",
+                    new {Controller = "Home", action = "Index"});
+
+
+                endpoints.MapControllerRoute("page", //this endpoint is for when the user only types a page into the URL
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index"});
+
+
+                endpoints.MapControllerRoute("genre", //this endpoint is for when the user types a genre into the url
+                  "{genre}",
+                  new { Controller = "Home", action = "Index", page = 1 });
+
+
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P{page}",

@@ -6,6 +6,10 @@
     <div class="row">
         <div class="col-2 bg-info jumbotron rounded">
             <p class="text-white">This is a bookstore where you can oddly find 10 of Spencer Hilton's Favorite books and 3 of Scott Pulley's</p>
+            <div>
+                <vc:navigation-menu />
+            </div>
+            
         </div>
         <div class="col-10">
             <table class="table text-white">
@@ -45,7 +49,7 @@
             </table>
             <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn text-white"
                  page-class-normal="btn-outline-dark"
-                 page-class-selected="btn-light text-dark"
+                 page-class-selected="btn-light text-dark" page-url-genre="@Model.CurrentGenre"
                  class="btn-group pull-right m-1 "></div>
         </div>
     </div>
