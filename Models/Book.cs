@@ -36,7 +36,7 @@ namespace Assignment4.Models
 
         [Required]
         [DataType(DataType.Currency)]
-        public double? Price { get; set; }
+        public double Price { get; set; }
 
         [Required]
         public int Pages { get; set; }

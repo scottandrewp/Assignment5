@@ -23,7 +23,7 @@ namespace Assignment4.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string genre, int page = 1)
+        public IActionResult Index(string genre, int pageNum = 1)
         {
 
             return View(new BookListViewModel
@@ -31,14 +31,14 @@ namespace Assignment4.Controllers
                 Books = _repository.Books   //Format repository info and take the info according to the number of items per page desired
                     .OrderBy(p => p.BookId)
                     .Where(p => genre == null  || p.Genre == genre ) // this allows me to filter by genre. I chose genre because I think it makes more sense for books. 
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize)
 
                 ,
 
                 PagingInfo = new PagingInfo // set the Paging info
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = genre == null ? _repository.Books.Count() : 
                         _repository.Books.Where(x => x.Genre == genre).Count()
